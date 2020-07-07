@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOGIN HOTEL</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<nav class="container nav-container navbar navbar-dark orange lighten-1 justify-content-center">
+    <div class="row mt-4 ">
+        <div class="col">
+            <input id="login-button" type="submit" class="btn btn-outline-info btn-login" value="Login Empleado" >
+        </div>
+        <div class="col">
+            <input id="checkIn-button" type="submit" class="btn btn-outline-info btn-register d-none" placeholder="CheckIn" value="CheckIn" >
+        </div>
+        <div class="col">
+            <input id="checkOut-button" type="submit" class="btn btn-outline-info btn-delete d-none" placeholder="checkOut" value="CheckOut" >
+        </div>
+        <div class="col">
+            <input id="info-button" type="submit" class="btn btn-outline-info btn-info d-none" value="Ver Info Hotel" >
+        </div>
+        <div class="col">
+            <input id="changeRoom-button" type="submit" class="btn btn-outline-info btn-info d-none" value="Change Room" >
+        </div>
+    </div>
+</nav>
+
+<body>
+    <div class="container login-container d-none">
+        <h2>Login</h2>
+        <form id="login-form" >
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="text" id="DNIempleado" class="form-control" placeholder="DNI Usuario" value="47382999D">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="password" id="passwordLogin" class="form-control" placeholder="Contraseña" value="123456">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input id="submit-button-login" type="submit" class="btn btn-block btn-login" placeholder="enviar" >
+                    <div></div>
+                </div>
+            </div>  
+        </form>
+        
+    </div>
+
+    <div class="container checkIn-container d-none">
+        <h2>CheckIn</h2>
+        <form id="checkIn-form" novalidate>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="text" id="DNI" class="form-control" placeholder="DNI completo">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="text" id="name" class="form-control" placeholder="Nombre completo">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="number" id="numAdults" class="form-control" placeholder="Numero de adultos">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="number" id="numKids" class="form-control" placeholder="Numero de niños">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="number" id="numNights" class="form-control" placeholder="Noches">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 form-group form-group-button">
+                    <input id="submit-button-register" type="submit" class="btn btn-block btn-login btn-danger" value="Enviar">
+                </div>
+            </div>  
+        </form>
+        <form id="login-form2" class="d-none">
+            <ul class="list-clientsIn">
+                <li class="list-group-item active text-center clientsIn">Aqui está el array de clientes en el activos</li>
+            </ul> 
+        </form>
+    </div>
+
+    <div class="container checkOut-container d-none">
+        <h2>CheckOut</h2>
+        <form id="checkOut-form" novalidate>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="text" id="DNIOut" class="form-control" placeholder="DNI completo">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 form-group form-group-button">
+                    <input id="submit-button-checkOut" type="submit" class="btn btn-block btn-login btn-danger" value="Enviar">
+                </div>
+            </div>  
+        </form>
+        <form id="out-form2" class="d-none">
+            <ul class="list-clientsOut">
+                <li class="list-group-item active text-center clientsOut">Aqui está el array de clientes pasados</li>
+            </ul> 
+        </form>
+        <form class="card text-center d-none" id="formCard">
+            <div class="card-header">
+                Informacion de la reserva
+            </div>
+            <div class="card-body text-dark">
+                <a href="#" class="clickToCheckOut btn btn-primary d-none">Click Aqui para hacer Check Out</a>
+            </div>
+           
+        </form>
+    </div>
+
+    <div class="container delete-container d-none">
+        <h2>Borra tu Mail</h2>
+        <form id="delete-form" novalidate>
+            <div class="row">
+                <div class="col-md-12 form-group" id="deleteMail">
+                    <input type="text" id="mailDelete" class="form-control" placeholder="Usuario">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 form-group" id="password" >
+                    <input type="text" id="confirmPass" class="form-control" placeholder="Contraseña">
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input id="submit-button-change" type="submit" class="btn btn-block btn-delete" placeholder="enviar" >
+                    <div></div>
+                </div>
+            </div>
+
+        </form>  
+    </div>
+
+    <div class="container text-center info-container d-none center-block">
+        <h3>Informacion delas habitaciones</h3>
+        <form id="info-room-form" novalidate>
+            <div class="row d-flex justify-content-around">
+               <table class="table-Rooms ">
+                    <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nº Camas</th>
+                        <th scope="col">Precio/noche</th>
+                        <th scope="col">¿Ocupado?</th>
+                    </tr>
+                    </thead>
+                    <tbody class="tBodyRooms">
+                    </tbody>
+                </table> 
+            </div>
+        </form> 
+        <h3 class="m-2">Informacion de los clientes </h3> 
+        <form id="info-clientsIn-form" novalidate>
+            <div class="row d-flex justify-content-around">
+                <table class="table-clientsIn">
+                    <thead>
+                        <tr>
+                        <th scope="col">DNI</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Nº Noches</th>
+                        <th scope="col">Nº Habitacion</th>
+                        </tr>
+                    </thead>
+                    <tbody class="tBodyClientsIn">
+                    </tbody>
+                </table>
+            </div>
+        </form>
+
+        <h3>Informacion de clientes pasados</h3>
+        <form id="info-clientsOut-form" novalidate>
+
+            <div class="row d-flex justify-content-around">
+                <table class="table-clientsOut">
+                    <thead>
+                        <tr>
+                        <th scope="col">DNI</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Nº Noches</th>
+                        <th scope="col">Nº Habitacion</th>
+                        </tr>
+                    </thead>
+                    <tbody class="tBodyClientsOut">
+                    </tbody>
+                </table>
+            </div>
+        </form>
+    </div>
+    
+    <div class="container changeRoom-container d-none">
+        <h2>ChangeRoom</h2>
+        <form id="changeRoom-form" novalidate>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="text" id="DNI-ChangeRoom" class="form-control" placeholder="DNI completo">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 form-group form-group-button">
+                    <input id="submit-button-changeRoom" type="submit" class="btn btn-block btn-login btn-danger" value="Enviar">
+                </div>
+            </div>
+            <div class="rowSelectors">
+            </div>  
+        </form>
+    </div>
+
+    <div class="row">
+        <div class="errors col-md-12 text-center">
+            <a href="#"></a>
+        </div>
+    </div>
+
+    <script src="./index.js" type="module"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</body>
+</html>
